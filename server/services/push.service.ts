@@ -19,7 +19,7 @@ export class PushService {
     }
 
     notifs.forEach((notif: any) => {
-      const users = notif.users;
+      const users = notif.users.map((u: string) => u.toLowerCase());
       const sendToAll = notif.sendToAll;
       const androidPayload = notif.android;
       const iosPayload = notif.ios;
